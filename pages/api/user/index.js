@@ -11,7 +11,7 @@ const {
     hostname: cloud_name,
     username: api_key,
     password: api_secret,
-} = new URL("cloudinary://524888753825321:TNtoyCD-f65uBuLCT3Jl734brZo@ddczon2vp");
+} = new URL("cloudinary://199734791412289:1fNguLsGv3oAr7XY_s_OcVcT3AY@dpvocrenk");
 
 cloudinary.config({
     cloud_name,
@@ -31,10 +31,10 @@ handler.patch(upload.single('profilePicture'), async (req, res) => {
     let profilePicture;
     if (req.file) {
         const image = await cloudinary.uploader.upload(req.file.path, {
-            width: 512,
-            height: 512,
+            width: 1048,
+            height: 1048,
             crop: 'fill',
-            folder: 'Nextjs-Mongodb-Authentication-App',
+            folder: 'Profile-Images',
             use_filename: true
         });
         profilePicture = image.secure_url;
